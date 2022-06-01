@@ -1,14 +1,20 @@
 <template>
-  <div class="login">
-    <H1>Login</H1>
+  <div class="main">
+    <div class="login">
+      <div class="content-login">
+        <header>
+          <h1>Login do Sistema</h1>
+        </header>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
 
 export default {
   name: 'LoginView'
 }
 </script>
+
+<style lang="scss" src="./style.scss" scoped ></style>
