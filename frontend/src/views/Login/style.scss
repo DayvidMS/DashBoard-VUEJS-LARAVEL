@@ -5,6 +5,7 @@
     width: 100%;
     justify-content: center;
     align-items: center;
+    background-color: $gray;
 
     .content-login{
         width: 400px;
@@ -12,19 +13,30 @@
         background-color: $purple;
         border-radius: 7px;
         display: flex;
+        flex-direction: column;
         align-items: center;
+        align-content: center;
 
         header{
             width: 100%;
             display: flex;
             justify-content: center;
-            align-items: center;
 
             h1{
+                margin-top: 70px;
+                color: $white;
+                font-size: 28px;
+            }
+        }
+        
+        .form {
+            width: 70%;
+            margin-top: 30px;
+
+            label {
                 color: $white;
             }
         }
-
 
     }
 
