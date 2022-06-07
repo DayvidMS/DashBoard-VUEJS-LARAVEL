@@ -1,23 +1,26 @@
 <template>
    <div class="main">
        <div class="sidebar">
-
+           <SidebarComponent />
        </div>
 
        <div class="content-right">
            <div class="navbar">
-s
+               <NavbarComponent />
            </div>
            <div class="pages">
-f
+
            </div>
        </div>
    </div>
 </template>
 
 <script>
+import SidebarComponent from '@/components/SidebarComponent.vue';
+import NavbarComponent from '@/components/NavbarComponent.vue';
 export default {
-    name: "DashboardView"
+    name: "DashboardView",
+    components: { SidebarComponent, NavbarComponent }
 }
 </script>
 
