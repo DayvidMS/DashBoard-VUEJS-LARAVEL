@@ -2,7 +2,9 @@
   <DashboardView>
     <template #slot-home>
       <div class="content-home">
-        Produtos
+        <header class="title_pages">
+            <p>Produtos</p>
+        </header>
       </div>
     </template>
   </DashboardView>
