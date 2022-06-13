@@ -11,11 +11,10 @@
        </div>
        <div class="menu">
            <ul>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
-               <li></li>
+               <li><router-link :to="{name: 'home'}"><i class="fa fa-home icon"></i> Inicio</router-link></li>
+               <li><router-link :to="{name: 'products'}"><i class="fa fa-box icon"></i>Produtos</router-link></li>
+               <li><router-link :to="{name: 'products'}"><i class="fa fa-store icon"></i>vendas</router-link></li>
+               <li><router-link :to="{name: 'products'}"><i class="fa fa-chart-bar icon"></i>Relátorios</router-link></li>
            </ul>
         
        </div>
@@ -69,6 +68,27 @@ export default {
                     font-size: 10px;
                 }   
             }
+        }
+
+        .menu {
+            margin-top: 15px;
+            padding: 10px;
+
+            ul li {
+                margin: 15px 0 ;
+                font-size: 18px;
+                list-style: none;
+                font-weight: 200;
+
+                a{
+                    color: #fff;
+                    text-decoration: none;
+        
+                    .icon{
+                        margin-right: 15px;
+                    }
+                }
+            } 
         }
     }
 

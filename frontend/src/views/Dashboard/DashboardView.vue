@@ -8,8 +8,8 @@
            <div class="navbar">
                <NavbarComponent />
            </div>
-           <div class="pages">
-
+           <div class="home">
+               <slot name="slot-home"></slot>
            </div>
        </div>
    </div>
