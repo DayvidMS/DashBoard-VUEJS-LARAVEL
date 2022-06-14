@@ -27,8 +27,13 @@
 
           </div>
         </div>
-       
-
+        <div class="mt-5">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <ListsComponent :users="users" />
+            </div>
+          </div>
+        </div>
       </div>
     </template>
   </DashboardView>
@@ -36,13 +41,34 @@
 <script>
 import DashboardView from '../Dashboard/DashboardView.vue'
 import CardsComponent from '@/components/CardsComponent.vue'
+import ListsComponent from '@/components/ListsComponent.vue'
 
 export default {
   name: "HomeComponent",
+  data() {
+    return {
+      users: []
+    }
+  },
+  methods: {
+    async getUsers(){
+      const axios = require('axios').default;
+       try {
+        const response = await axios.get('https://jsonplaceholder.typicode.com/users');
+        this.users = response.data
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  },
+  mounted(){
+    this.getUsers();
+  },
   components: {
     DashboardView,
-    CardsComponent
-}
+    CardsComponent,
+    ListsComponent
+  }
 }
 </script>
 
