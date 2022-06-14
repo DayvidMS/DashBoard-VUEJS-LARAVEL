@@ -1,18 +1,24 @@
 <template>
     <div class="my-card">
         <div class="content top">
-            <h3>Clientes</h3>
-            <p class="percentage"><i class="fa fa-arrow-up"></i> 7%</p>
+            <h3>{{ type }}</h3>
+            <p class="percentage"><i class="fa fa-arrow-up"></i> {{ percentage }}</p>
         </div>
         <div class="content footer">
-            <i class="fa fa-users"></i>
-            <p class="qtd">9570</p>
+            <i :class="['fa ico', icon]"></i>
+            <p class="qtd">{{ qtd }}</p>
         </div>
     </div>
 </template>
 <script>
 export default {
-    name: 'Cards'
+    name: 'CardsComponent',
+    props: {
+        type: String,
+        percentage: String,
+        icon: String,
+        qtd: String
+    }
 }
 </script>
 
@@ -21,7 +27,7 @@ export default {
     .my-card{
         display: flex;
         flex-direction: column;
-        width: 300px;
+        width: 100%;
         background-color: $purple;
         padding: 15px;
         border-radius: 7px;
@@ -32,11 +38,21 @@ export default {
             justify-content: space-between;
         }
         .top{
-
+            .percentage {
+                color: $green;
+            }
         }
 
         .footer{
             
+            .ico{
+                font-size: 40px ;
+            }
+
+            .qtd{
+                font-size: 30px;
+                margin: 0;
+            }
         }
     }
 
