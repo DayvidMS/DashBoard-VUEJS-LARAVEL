@@ -47,7 +47,7 @@
 import DashboardView from '../Dashboard/DashboardView.vue'
 import CardsComponent from '@/components/CardsComponent.vue'
 import ListsComponent from '@/components/ListsComponent.vue'
-
+import axios from 'axios'
 export default {
   name: "HomeComponent",
   data() {
@@ -57,13 +57,15 @@ export default {
   },
   methods: {
     async getUsers(){
-      const axios = require('axios').default;
-       try {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/users');
-        this.users = response.data
-      } catch (error) {
-        console.error(error);
-      }
+      /**
+       * caso haja erro na requisição do cors, o problema é no backend, basta adicionar no caminho config\cors.php
+       * do laravel no parametro paths a opção api fica da seguinte form
+       * 'paths' => ['api/*', 'sanctum/csrf-cookie','api']
+       */
+      let res = await axios.get('http://127.0.0.1:8000/api');
+
+      console.log(res);
+       
     }
   },
   mounted(){
