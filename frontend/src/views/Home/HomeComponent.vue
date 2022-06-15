@@ -29,8 +29,13 @@
         </div>
         <div class="mt-5">
           <div class="row">
+            <!-- Lista de Clientes -->
             <div class="col-12 col-md-6">
-              <ListsComponent :users="users" />
+              <ListsComponent :data="users" description="Clientes" :columns="['Nome','Email']" />
+            </div>
+            <!-- Lista de Produtos -->
+            <div class="col-12 col-md-6">
+              <ListsComponent :data="users" description="Produtos" :columns="['Nome','Valor']" />
             </div>
           </div>
         </div>
